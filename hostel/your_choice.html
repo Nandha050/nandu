@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hostel Recommendation</title>
+    <link rel="stylesheet" href="choice.css">
+</head>
+<body>
+    <div class="title">
+        <h1>Hostel Recommendation</h1>
+        <h3>Find your ideal stay based on your choices</h3>
+    </div>
+
+    <div class="container">
+        <form id="hostelForm">
+            <!-- Hostel Type -->
+            <div class="form-section">
+                <label>Hostel Type:</label><br>
+                <div class="checkbox-group">
+                    <label for="boys">BOYS</label>
+                    <input id="boys" name="hostel_type" type="checkbox" value="male">
+                    <label for="girls">GIRLS</label>
+                    <input id="girls" name="hostel_type" type="checkbox" value="female">
+                    <label for="unisex">UNISEX</label>
+                    <input id="unisex" name="hostel_type" type="checkbox" value="unisex">
+                </div>
+            </div>
+
+            <!-- Preferred Location -->
+            <div class="form-section input-group">
+                <label for="location">Preferred Location:</label>
+                <input name="location" list="locations" placeholder="Select a location">
+                <datalist id="locations">
+                    <option value="dilsuknagar">
+                    <option value="kompally">
+                    <option value="moosapet">
+                    <option value="kukatpally">
+                    <option value="banjara hills">
+                    <option value="madhapur">
+                    <option value="gachibowli">
+                    <option value="gandimaisamma">
+                </datalist>
+            </div>
+
+            <!-- Facilities -->
+            <div class="form-section">
+                <label>Facilities:</label><br>
+                <div class="checkbox-group">
+                    <label for="laundry">Laundry</label><input id="laundry" name="facilities" type="checkbox" value="laundry">
+                    <label for="meals">Meals</label><input id="meals" name="facilities" type="checkbox" value="meals">
+                    <label for="gym">Gym</label><input id="gym" name="facilities" type="checkbox" value="gym">
+                    <label for="security">Security</label><input id="security" name="facilities" type="checkbox" value="security">
+                    <label for="wifi">Wi-Fi</label><input id="wifi" name="facilities" type="checkbox" value="wi-fi">
+                    <label for="parking">Parking</label><input id="parking" name="facilities" type="checkbox" value="parking">
+                </div>
+            </div>
+
+            <!-- Rating -->
+            <div class="form-section input-group">
+                <label for="rating">Preferred Rating (1 to 5):</label>
+                <input name="rating" type="number" id="rating" min="1" max="5" placeholder="Enter rating">
+            </div>
+
+            <!-- Share -->
+            <div class="form-section input-group">
+                <label for="share">Maximum Sharing:</label>
+                <input name="share" type="number" id="share" min="1" max="9" placeholder="Max people sharing the room">
+            </div>
+
+            <!-- Price -->
+            <div class="form-section input-group">
+                <label for="price">Price (Max per month):</label><br>
+                <input name="price_max" type="number" id="price_max" placeholder="Max price">
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-section">
+                <button type="button" class="button" onclick="recommendHostels()">Get Recommendations</button>
+            </div>
+        </form>
+
+        <!-- Hostel Recommendations -->
+        <div class="recommendations" id="recommendations">
+            <!-- Recommendations will be displayed here -->
+        </div>
+    </div>
+
+    <script src="choice.js"></script>
+</body>
+</html>
